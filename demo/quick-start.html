@@ -8,7 +8,8 @@
             font-family: "Roboto", sans-serif;
         }
     </style>
-    <script src="https://cdn.jsdelivr.net/npm/swarmcloud-theoplayer@latest"></script>
+<!--    <script src="https://cdn.jsdelivr.net/npm/swarmcloud-theoplayer@latest"></script>-->
+    <script src="../dist/theoplayer-p2p-engine.min.js"></script>
     <!-- THEOplayer build and UI -->
     <script src="//cdn.myth.theoplayer.com/c195a0cd-3811-40c6-80d7-384f09506239/THEOplayer.js"></script>
     <link
@@ -43,17 +44,17 @@
     player.muted = true;
     player.autoplay = true;
 
-    var engine = new P2pEngineTheo({
+    var engine = new P2pEngineTheo(player, {
         // trackerZone: 'hk',        // if using Hongkong tracker
         // trackerZone: 'us',        // if using USA tracker
         // token: YOUR_TOKEN
     })
-    engine.setPlayer(player);
 
     player.source = {
         sources: [
             {
-                src: "https://test-streams.mux.dev/x36xhzz/url_8/193039199_mp4_h264_aac_fhd_7.m3u8",
+                // src: "https://test-streams.mux.dev/x36xhzz/url_8/193039199_mp4_h264_aac_fhd_7.m3u8",
+                src: "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/level_0.m3u8",
                 // src: "https://dash.akamaized.net/akamai/bbb_30fps/bbb_30fps.mpd",
             },
         ],
